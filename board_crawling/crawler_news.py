@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import re
 from pandas import DataFrame
 
-class Crawler:
+class CrawlerNews:
 
     nasdaq = []
     korea_news_List = []
@@ -74,7 +74,6 @@ class Crawler:
             self.korea_news_List.append(subList)
 
         
-    
     def makeCsv(self):
         mycolumns = ['제목', '내용', '작성일자', 'url']
         frame = DataFrame(self.korea_news_List, columns=mycolumns)
@@ -86,7 +85,7 @@ class Crawler:
         print(filename + ' 파일 저장됨')
 
 if __name__ == '__main__':
-    c = Crawler()
+    c = CrawlerNews()
     c.process()
 
     
